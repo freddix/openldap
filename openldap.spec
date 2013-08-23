@@ -1,11 +1,11 @@
 Summary:	LDAP libraries
 Name:		openldap
-Version:	2.4.35
+Version:	2.4.36
 Release:	1
 License:	OpenLDAP Public License
 Group:		Networking/Daemons
 Source0:	ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/%{name}-%{version}.tgz
-# Source0-md5:	cd75d82ca89fb0280cba66ca6bd97448
+# Source0-md5:	744701405d396b1fb9de6cb7a453c6e9
 URL:		http://www.openldap.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -50,7 +50,7 @@ CPPFLAGS="-I/usr/include/ncurses -D_GNU_SOURCE"
 %{__make} -j1 depend
 %{__make}
 
-rm -f doc/rfc/rfc*
+%{__rm} doc/rfc/rfc*
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -58,9 +58,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_sysconfdir}/openldap/{*.{default,example},ldap.conf,schema/README}
-rm -rf $RPM_BUILD_ROOT%{_bindir}
-rm -rf $RPM_BUILD_ROOT%{_mandir}/man{1,5,8}
+%{__rm} $RPM_BUILD_ROOT%{_sysconfdir}/openldap/{*.default,ldap.conf}
+%{__rm} -r $RPM_BUILD_ROOT%{_bindir}
+%{__rm} -r $RPM_BUILD_ROOT%{_mandir}/man{1,5,8}
 
 chmod +x $RPM_BUILD_ROOT%{_libdir}/*
 

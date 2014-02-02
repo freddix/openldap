@@ -1,11 +1,11 @@
 Summary:	LDAP libraries
 Name:		openldap
-Version:	2.4.38
+Version:	2.4.39
 Release:	1
 License:	OpenLDAP Public License
 Group:		Networking/Daemons
 Source0:	ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/%{name}-%{version}.tgz
-# Source0-md5:	39831848c731bcaef235a04e0d14412f
+# Source0-md5:	b0d5ee4b252c841dec6b332d679cf943
 URL:		http://www.openldap.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
